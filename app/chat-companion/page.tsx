@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { useToast } from "@/hooks/use-toast"
-import { AlignVerticalDistributeCenter, Loader2, Send } from "lucide-react"
+import {  Loader2, Send } from "lucide-react"
 
 interface Message {
   id: string
@@ -158,8 +158,8 @@ export default function ChatCompanionPage() {
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
               {messages.length === 0 && (
                 <div className="text-center text-gray-500 mt-8">
-                  <p>Welcome! I'm here to listen and support you.</p>
-                  <p className="text-sm mt-2">Share what's on your mind...</p>
+                  <p>{"Welcome! I'm here to listen and support you."}</p>
+                  <p className="text-sm mt-2">{"Share what's on your mind..."}</p>
                 </div>
               )}
 

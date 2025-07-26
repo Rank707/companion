@@ -58,7 +58,7 @@ export default function EnterCodePage() {
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to validate code. Please try again.",
+        description: "Failed to validate code. Please try again."+error,
         variant: "destructive",
       })
     } finally {

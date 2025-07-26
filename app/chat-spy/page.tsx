@@ -29,46 +29,52 @@ export default function ChatSpyPage() {
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const { toast } = useToast()
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     if (!code) return
 
     // Replace with your backend Socket.IO URL
     const newSocket = io("https://mindmate-y168.onrender.com/")
     setSocket(newSocket)
 
-    newSocket.on("connect", () => {
+    newSocket.on("connect", () =>
+    {
       setIsConnected(true)
-      newSocket.emit("join-room", { code:code ,userType:"spy"})
+      newSocket.emit("join-room", { code: code, userType: "spy" })
     })
 
-    newSocket.on("disconnect", () => {
+    newSocket.on("disconnect", () =>
+    {
       setIsConnected(false)
     })
 
-    newSocket.on("friend-typing", (data) => {
+    newSocket.on("friend-typing", (data) =>
+    {
       setCompanionDraft(data.currentDraft)
       setIsCompanionTyping(data.isTyping)
     })
 
-    newSocket.on("ai-response", (data) => {
-  setMessages((prev) => [
-    ...prev,
+    newSocket.on("ai-response", (data) =>
     {
-      id: Date.now() + "-user",
-      type: "user",
-      content: data.userMessage || "",
-      timestamp: new Date().toISOString(),
-    },
-    {
-      id: Date.now() + "-ai",
-      type: "ai",
-      content: data.text || "No response from AI 😶", // <- 🔥 FIXED!
-      timestamp: new Date().toISOString(),
-    },
-  ])
-})
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: Date.now() + "-user",
+          type: "user",
+          content: data.userMessage || "",
+          timestamp: new Date().toISOString(),
+        },
+        {
+          id: Date.now() + "-ai",
+          type: "ai",
+          content: data.text || "No response from AI 😶", // <- 🔥 FIXED!
+          timestamp: new Date().toISOString(),
+        },
+      ])
+    })
 
-    newSocket.on("prank-injected", (data) => {
+    newSocket.on("prank-injected", (data) =>
+    {
       toast({
         title: "Prank Sent! 😈",
         description: `Injected: "${data.prankThoughts}"`,
@@ -76,14 +82,16 @@ export default function ChatSpyPage() {
       setPrankThoughts("")
     })
 
-    newSocket.on("user-joined", (data) => {
+    newSocket.on("user-joined", (data) =>
+    {
       toast({
         title: "User Connected",
         description: `${data.userType} joined the room`,
       })
     })
 
-    newSocket.on("user-left", (data) => {
+    newSocket.on("user-left", (data) =>
+    {
       toast({
         title: "User Disconnected",
         description: `${data.userType} left the room`,
@@ -92,10 +100,11 @@ export default function ChatSpyPage() {
     })
     console.log(prankThoughts);
 
-    return () => {
+    return () =>
+    {
       newSocket.close()
     }
-  }, [code, toast])
+  }, [code, toast]);
   
   useEffect(() => {
   if (!socket || !code) return;
@@ -164,7 +173,7 @@ export default function ChatSpyPage() {
               {messages.length === 0 && (
                 <div className="text-center text-gray-500 mt-8">
                   <p>Waiting for conversation to start...</p>
-                  <p className="text-sm mt-2">You'll see all messages here 👀</p>
+                  <p className="text-sm mt-2">{"You'll see all messages here 👀"}</p>
                 </div>
               )}
 
