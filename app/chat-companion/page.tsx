@@ -145,7 +145,7 @@ export default function ChatCompanionPage() {
         <Card className="h-[90vh] flex flex-col">
           <CardHeader className="border-b">
             <CardTitle className="flex items-center justify-between">
-              <span>GuiltMate AI Companion</span>
+              <span>MindMate AI Companion</span>
               <div className="flex items-center gap-2">
                 <div className={`w-2 h-2 rounded-full ${isConnected ? "bg-green-500" : "bg-red-500"}`} />
                 <span className="text-sm text-gray-500">{isConnected ? "Connected" : "Disconnected"}</span>
@@ -183,7 +183,7 @@ export default function ChatCompanionPage() {
                   <div className="bg-gray-200 text-gray-900 p-3 rounded-lg">
                     <div className="flex items-center gap-2">
                       <Loader2 className="h-4 w-4 animate-spin" />
-                      <span>GuiltMate is thinking...</span>
+                      <span>MindMate is thinking...</span>
                     </div>
                   </div>
                 </div>

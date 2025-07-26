@@ -10,7 +10,7 @@ export default function HomePage() {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Welcome to <span className="text-indigo-600">GuiltMate AI</span>
+            Welcome to <span className="text-indigo-600">MindMate AI</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Your trusted AI companion for meaningful conversations. Share your thoughts, get insights, and find support
@@ -54,7 +54,7 @@ export default function HomePage() {
         <Card className="max-w-2xl mx-auto text-center">
           <CardHeader>
             <CardTitle className="text-2xl">Ready to Start?</CardTitle>
-            <CardDescription>Enter your access code to begin your conversation with GuiltMate AI</CardDescription>
+            <CardDescription>Enter your access code to begin your conversation with MindMate AI</CardDescription>
           </CardHeader>
           <CardContent>
             <Link href="/enter-code">

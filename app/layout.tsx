@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/toaster"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "GuiltMate AI - Your AI Companion",
+  title: "MindMate AI - Your AI Companion",
   description: "A trustworthy AI companion for meaningful conversations",
 }
 
